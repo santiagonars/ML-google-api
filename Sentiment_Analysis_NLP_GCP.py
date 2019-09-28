@@ -32,7 +32,7 @@ def apiAccess():
     serviceKey = "debias-253616-bd2728a1c781.json" # NLP key
     with open(serviceKey, 'r') as myfile:
         json_authCred=myfile.read()
-        print(json_authCred)
+        # print(json_authCred)
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = serviceKey
     # print(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
 
