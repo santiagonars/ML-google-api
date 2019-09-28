@@ -23,7 +23,7 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
-
+# -----Load API Key to Access Google Cloud Platform--------
 def apiAccess():
     # ---------Load API Key to Access Google Cloud Platform----------
     #***IMPORTANT: make sure JSON file for service account key name is correct & that it's inside the authPath directory
@@ -55,10 +55,9 @@ def nlpSentimentCall():
     # print('Text: {}'.format(text))
     # print(response.score)
     # print(response.magnitude)
-
     convertToJSON(response.score, response.magnitude)
     
-
+# ----------------Serialize to JSON------------------
 def convertToJSON(scoreResponse, magnitudeResponse):
     # define Python object
     pythonData = {

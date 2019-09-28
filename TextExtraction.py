@@ -11,6 +11,7 @@
 
 import io
 import os
+import json
 import requests
 from requests.exceptions import HTTPError, Timeout
 from bs4 import BeautifulSoup
@@ -18,6 +19,7 @@ from bs4 import BeautifulSoup
 
 url = "https://www.vice.com/en_us/article/59nyjq/another-republican-senator-who-snubbed-trump-could-be-in-trouble"
 
+# ----------Make Request to Scrape URL----------
 def httpRequest():
     # Use requests to issue a standard HTTP GET 
     try:
@@ -32,7 +34,7 @@ def httpRequest():
     except Timeout as err:
         print("Request time out {0}".format(err))
     
-
+# ------------Extract and Clean Text-----------
 def webScrapeURL(result):
     html_code = result.content
     # 
@@ -43,6 +45,13 @@ def webScrapeURL(result):
             textFound = p_tag.text
             stringToModify += textFound
     print(stringToModify)
+
+# -----------Parse JSON to Python Object-----------
+def parseJSON(jsonStr):
+    global url
+    data = json.loads(jsonStr)
+    # print(data['url'])
+    url = data['url']
 
 
 if __name__ == '__main__':
