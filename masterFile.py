@@ -1,7 +1,7 @@
 # --------------------Main Local Libraries---------------------
 import io
 import os
-# ---------------------Request Libraries---------------------
+# ---------------------API Libraries---------------------
 from flask import Flask
 from flask import request,jsonify
 from flask_restful import Api, Resource, reqparse
