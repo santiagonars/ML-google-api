@@ -24,8 +24,8 @@ def httpGetRequest(url):
         print("Request time out {0}".format(err))
     
 # ------------Extract and Clean Text-----------
-def textScrapeURL(result):
-    html_code = result.content
+def textScrapeURL(rawtext):
+    html_code = rawtext.content
     # webscrape hmtl
     soup = BeautifulSoup(html_code, 'html.parser')
     # save text inside <paragraph> tags
@@ -45,7 +45,40 @@ def imageScrapeURL(result):
     # TODO: save image URLs in <image> tags
     extractedImageURL = str()
 
-    
+# call for help in using functions
+def funchelp():
+    print('''
+    Required libraries:
+    - requests
+    - bs4
+    #---------------------------
+    Function:
+    httpGetRequest(url)
+
+    Inputs:
+    - Arg #1: url = url link (string)
+
+    Outputs:
+    - result = Raw text of url link (string)
+
+    Description:
+    - Makes a GET request and retrieves all raw text from url link 
+    #---------------------------
+    Function:
+    textScrapeURL(rawtext)
+
+    Inputs:
+    - Arg #1: rawtext = all raw keywords from a url link (string)
+
+    Outputs:
+    - extractedText = clean text extracted paragraph tags (string)
+
+    Description:
+    - Web scrapes raw text for html, and then extracts text within paragraph tags
+    #---------------------------
+    ''')
+
+
 if __name__ == 'KeywordExtraction':
     pass
 
