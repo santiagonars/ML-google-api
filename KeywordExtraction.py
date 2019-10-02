@@ -12,10 +12,10 @@ from bs4 import BeautifulSoup
 # NOTE: 
 
 
-url = "https://www.vice.com/en_us/article/59nyjq/another-republican-senator-who-snubbed-trump-could-be-in-trouble"
+# url = "https://www.vice.com/en_us/article/59nyjq/another-republican-senator-who-snubbed-trump-could-be-in-trouble"
 
 # ----------Make Request to Retrieve all URL----------
-def httpGetRequest():
+def httpGetRequest(url):
     # Use requests to issue a standard HTTP GET 
     try:
         result = requests.get(url ,timeout=10)
@@ -39,7 +39,8 @@ def textScrapeURL(result):
     for p_tag in soup.find_all('p'): # Same but for paragraph tags
             textFound = p_tag.text
             extractedText += textFound
-    print(extractedText)
+    # print(extractedText)
+    return extractedText
 
 # ------------Extract and Clean Images-----------
 def imageScrapeURL(result):
@@ -49,13 +50,6 @@ def imageScrapeURL(result):
     soup = BeautifulSoup(html_code, 'html.parser')
     # TODO: save image URLs in <image> tags
     extractedImageURL = str()
-
-# -----------Parse JSON to Python Object-----------
-def parseJSON(jsonStr):
-    global url
-    data = json.loads(jsonStr)
-    # print(data['url'])
-    url = data['url']
 
 # ----------------Serialize to JSON------------------
 def convertToJSON(evaluation, scoreResponse, magnitudeResponse):
@@ -80,9 +74,13 @@ def convertToJSON(evaluation, scoreResponse, magnitudeResponse):
         print(err.msg)
         print(err.lineno, err.colno)
 
+# -----------Parse JSON to Python Object-----------
+def parseJSON(jsonStr):
+    pythonData = json.loads(jsonStr)
+    return pythonData
 
+    
 if __name__ == '__main__':
-    urlData = httpGetRequest()
-    textScrapeURL(urlData)
+    pass
 
 
