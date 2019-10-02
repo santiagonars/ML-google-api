@@ -1,15 +1,12 @@
 # -------------------Main Local Libraries--------------------
 import io
 import os
-# ---------------------JSON libraries------------------------
-import json
-from json import JSONDecodeError
 # ------------------Web Scraping Libraries-------------------
 import requests
 from requests.exceptions import HTTPError, Timeout
 from bs4 import BeautifulSoup
 # ----------------------NOTES------------------------------
-# NOTE: 
+# TODO: implement imageScrapeURL() capability
 
 # ----------Make Request to Retrieve all URL----------
 def httpGetRequest(url):
@@ -49,7 +46,7 @@ def imageScrapeURL(result):
     extractedImageURL = str()
 
     
-if __name__ == '__main__':
+if __name__ == 'KeywordExtraction':
     pass
 
 

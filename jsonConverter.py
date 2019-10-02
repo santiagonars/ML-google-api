@@ -2,7 +2,6 @@
 import json
 from json import JSONDecodeError
 
-
 # -----------Parse JSON to Python Object-----------
 def parseJSON(jsonStr):
     pythonData = json.loads(jsonStr)
@@ -50,3 +49,7 @@ def convertToJSON(evaluation, scoreResponse, magnitudeResponse):
         print("Whoops, json encoder error:")
         print(err.msg)
         print(err.lineno, err.colno)
+
+if __name__ == 'jsonConverter':
+    pass
+

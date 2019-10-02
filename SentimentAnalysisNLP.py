@@ -1,18 +1,6 @@
-# --------------------STEPS:------------------------------
-# ---->>> NLP Configuration Setup:
-# STEP 1: Activate Google Cloud Platform account
-# STEP 2: pip3 install --upgrade google-cloud-language
-# STEP 3:Enable NLP API:
-#    -> https://console.cloud.google.com/apis/library/language.googleapis.com?q=natural&id=223648f2-2e7c-4acd-b0ca-782f9021a541&project=ardent-oven-253616
-# STEP 4: Create API key  and store locally to access NLP API
-# --------------------NOTES:------------------------------
-# NOTE: 
-
+# -------------------Main Local Libraries--------------------
 import io
 import os
-import json
-from json import JSONDecodeError
-
 # ----------Imports the Google Cloud NLP API----------
 # from google.cloud import vision
 # Natural Language Processing Libraries (NLP)
@@ -27,13 +15,15 @@ def apiAccess():
     #serviceKey = "CloudVision-sandbox-366681a0e85d.json"  # Cloud Vision key
     #print("Service Key= " + serviceKey)
     serviceKey = "debias-253616-bd2728a1c781.json" # NLP key
-    with open(serviceKey, 'r') as myfile:
-        json_authCred=myfile.read()
-        # print(json_authCred)
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = serviceKey
-    # print(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
-
-
+    try:
+        with open(serviceKey, 'r') as myfile:
+            json_authCred=myfile.read()
+            # print(json_authCred)
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = serviceKey
+        # print(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
+        print("GCP API access successful!")
+    except:
+        print("Ops! There is something wrong with the Google Cloud API access.")
 # ------------NATURAL LANGUAGE API Call-----------
 def nlpSentimentCall(text):
     # Instantiates a client
@@ -53,7 +43,7 @@ def nlpSentimentCall(text):
     return response.score, response.magnitude
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == 'SentimentAnalysisNLP':
+    apiAccess()
     
  
