@@ -38,9 +38,7 @@ def apiAccess():
 def nlpSentimentCall(text):
     # Instantiates a client
     client = language.LanguageServiceClient()
-
     # Argument 1: The text to analyze
-    # text = "The investigation into Donald Trump’s promise to a foreign leader, which shocked a member of the intelligence community into making a complaint, relates to Ukraine, according to numerous media outlets.The New York Times and ABC both confirmed the involvement of Ukraine, first reported by the Washington Post on Thursday night.The complaint was made two weeks after Trump spoke to newly-elected Ukrainian President Volodymyr Zelensky, a former comedian, in late July, where the leaders discussed improving U.S.-Ukraine relations by boosting investigations into corruption."
     document = types.Document(
         content=text,
         type=enums.Document.Type.PLAIN_TEXT)
@@ -52,28 +50,7 @@ def nlpSentimentCall(text):
     # print('Text: {}'.format(text))
     # print('Score: {}'.format(response.score))
     # print('Score: {}'.format(response.magnitude))
-    # convertToJSON(response.score, response.magnitude)
     return response.score, response.magnitude
-    
-# ----------------Serialize to JSON------------------
-def convertToJSON(scoreResponse, magnitudeResponse):
-    # define Python object
-    pythonData = {
-        "score": scoreResponse,
-        "magnitude": magnitudeResponse
-    }
-    # Exception Handler to encode to json
-    try:  
-        # ->OPTION 1: serialize to json as a string
-        jsonStr = json.dumps(pythonData, indent=4)
-        # print(jsonStr)
-        return jsonStr
-        # ->OPTION 2: serialize to json to separate file
-        # json.dump(pythonData, open("nlpSentimentResponse.json","w"))
-    except JSONDecodeError as err:
-        print("Whoops, json encoder error:")
-        print(err.msg)
-        print(err.lineno, err.colno)
 
 
 if __name__ == '__main__':

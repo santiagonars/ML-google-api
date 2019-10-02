@@ -11,9 +11,6 @@ from bs4 import BeautifulSoup
 # ----------------------NOTES------------------------------
 # NOTE: 
 
-
-# url = "https://www.vice.com/en_us/article/59nyjq/another-republican-senator-who-snubbed-trump-could-be-in-trouble"
-
 # ----------Make Request to Retrieve all URL----------
 def httpGetRequest(url):
     # Use requests to issue a standard HTTP GET 
@@ -50,34 +47,6 @@ def imageScrapeURL(result):
     soup = BeautifulSoup(html_code, 'html.parser')
     # TODO: save image URLs in <image> tags
     extractedImageURL = str()
-
-# ----------------Serialize to JSON------------------
-def convertToJSON(evaluation, scoreResponse, magnitudeResponse):
-    # # define Python object
-    # pythonData = {
-    #     "evaluation": evaluation,
-    #     "score": scoreResponse,
-    #     "magnitude": magnitudeResponse
-    # }
-    pythonData = {
-        # "key", value
-    }
-    # Exception Handler to encode to json
-    try:  
-        # ->OPTION 1: serialize to json as a string
-        JSONdata = json.dumps(pythonData, indent=4)
-        print(JSONdata)
-        # ->OPTION 2: serialize to json to separate file
-        # json.dump(pythonData, open("jsonData.json","w"))
-    except JSONDecodeError as err:
-        print("Whoops, json encoder error:")
-        print(err.msg)
-        print(err.lineno, err.colno)
-
-# -----------Parse JSON to Python Object-----------
-def parseJSON(jsonStr):
-    pythonData = json.loads(jsonStr)
-    return pythonData
 
     
 if __name__ == '__main__':
