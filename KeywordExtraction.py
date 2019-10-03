@@ -26,9 +26,9 @@ def httpGetRequest(url):
 # ------------Extract and Clean Text-----------
 def textScrapeURL(rawtext):
     html_code = rawtext.content
-    # webscrape hmtl
+    # parse hmtl
     soup = BeautifulSoup(html_code, 'html.parser')
-    # save text inside <paragraph> tags
+    # web scrape text inside <paragraph> tags
     extractedText = str()
     for p_tag in soup.find_all('p'): # Same but for paragraph tags
             textFound = p_tag.text
@@ -56,10 +56,10 @@ def funchelp():
     httpGetRequest(url)
 
     Inputs:
-    - Arg #1: url = url link (string)
+    - Arg #1: url (string) = url link
 
     Outputs:
-    - result = Raw text of url link (string)
+    - result (string) = Raw text of url link
 
     Description:
     - Makes a GET request and retrieves all raw text from url link 
@@ -68,13 +68,13 @@ def funchelp():
     textScrapeURL(rawtext)
 
     Inputs:
-    - Arg #1: rawtext = all raw keywords from a url link (string)
+    - Arg #1: rawtext (string) = all raw keywords from a url link
 
     Outputs:
-    - extractedText = clean text extracted paragraph tags (string)
+    - extractedText (string) = clean text extracted from paragraph tags
 
     Description:
-    - Web scrapes raw text for html, and then extracts text within paragraph tags
+    - Parse html and then web scrape text within paragraph tags
     #---------------------------
     ''')
 
