@@ -15,7 +15,7 @@ def apiAccess():
     #***IMPORTANT: make sure JSON file for service account key name is correct & that it's inside the authPath directory
     #serviceKey = "CloudVision-sandbox-366681a0e85d.json"  # Cloud Vision key
     #print("Service Key= " + serviceKey)
-    serviceKey = "debias-253616-bd2728a1c781.json" # NLP key
+    serviceKey = "Debait-06c52cc7190c.json" # api key file name
     try:
         with open(serviceKey, 'r') as myfile:
             json_authCred=myfile.read()
