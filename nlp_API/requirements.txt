@@ -1,0 +1,3 @@
+# Requires service key at source in json format with "GOOGLE_APPLICATION_CREDENTIALS" assigned to it
+google-cloud=0.34.0
+google-cloud-language==1.3.0

@@ -4,6 +4,7 @@ import os
 # ----------Imports the Google Cloud NLP API----------
 # from google.cloud import vision
 # Natural Language Processing Libraries (NLP)
+
 from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
