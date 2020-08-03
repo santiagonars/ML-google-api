@@ -1,8 +1,9 @@
 # ML-google-api
 
 Includes:
-## > Sentiment Analysis for Websites 
-folder name: nlp_sentiment-analysis
+## > Sentiment Analysis for Websites
+
+### folder name: nlp_sentiment-analysis
 
 -----------
 - Library to parse to html from a url and scrape text. 
@@ -14,3 +15,5 @@ folder name: nlp_sentiment-analysis
 - Provides values for "magnitude" (level of emotion in text) and "score" (positive or negative)
 
 ![test_results](nlp_sentiment-analysis/test_results_sentimentAnalysis.png)
+
+---------------------------------------------------------------------------------------------------------------------------------
