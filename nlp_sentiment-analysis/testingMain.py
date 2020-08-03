@@ -1,4 +1,4 @@
-# If you find any parts of this code useful in any of the libraries  please add:
+# If you find any parts of this code useful in any of the libraries please add:
 '''
 Cite:
 Norena Santiago, ML-google-api: nlp_sentiment-analysis, (2020), 
