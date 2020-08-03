@@ -2,6 +2,7 @@
 
 Includes:
 ## Sentiment Analysis for Websites 
+folder name: nlp_sentiment-analysis
 -----------
 - Library to parse to html from a url and scrape text. 
 - Library to use the sentiment analysis API from Google Cloud Platform (*Requires an API key to access)
