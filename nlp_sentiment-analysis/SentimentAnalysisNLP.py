@@ -13,7 +13,6 @@ from google.cloud.language import types
 def apiAccess():
     # ---------Load API Key to Access Google Cloud Platform----------
     #***IMPORTANT: make sure JSON file for service account key name is correct & that it's inside the authPath directory
-    #serviceKey = "CloudVision-sandbox-366681a0e85d.json"  # Cloud Vision key
     #print("Service Key= " + serviceKey)
     serviceKey = "Debait-06c52cc7190c.json" # api key file name
     try:
