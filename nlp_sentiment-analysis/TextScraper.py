@@ -79,7 +79,7 @@ def funchelp():
     ''')
 
 
-if __name__ == 'KeywordExtraction':
+if __name__ == 'TextScraper':
     pass
 
 
